@@ -1,0 +1,123 @@
+.header {
+    // tweak
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: $z_layer_intro + 1;
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    transition: transform $base-duration $ease,
+                opacity $base-duration $ease,
+                background-color $base-duration $ease,
+                height $base-duration $ease,
+                padding-bottom $base-duration $ease,
+                align-items $base-duration $ease;
+
+    .boxen-left-navi & {
+        align-items: center;
+    }
+
+    &:before {
+        content: "";
+        // tweak
+        background-color: $white;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        transition: transform $base-duration $ease-menu-0;
+
+        // tweak
+        .is-uid-page &,
+        .is-boxen-page &,
+        .is-navi-mobile & {
+            background-color: $black;
+        }
+
+        .is-site-intro & {
+            transform: translate3d( 0, 100%, 0 );
+        }
+    }
+
+    .is-uid-page &,
+    .is-boxen-page & {
+        // tweak
+        height: $header-height-detail;
+
+        // tweak
+        @include respond( $mobile-breakpoint ) {
+            height: $header-height-mobile;
+        }
+    }
+
+    @include respond( $mobile-breakpoint ) {
+        // tweak
+        height: $header-height-mobile;
+    }
+}
+.header__primo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: $z_layer_intro + 1;
+    width: 100%;
+
+    .boxen-left-navi & {
+        justify-content: flex-start;
+        align-items: center;
+
+        @include respond( $mobile-breakpoint ) {
+            justify-content: space-between;
+        }
+    }
+}
+.header__navi {
+    .boxen-left-navi & {
+        padding-left: $expander-0;
+
+        @include respond( $mobile-breakpoint ) {
+            padding-left: 0;
+        }
+    }
+}
+.header__logo,
+.header__navi,
+.header__socials {
+    position: relative;
+    pointer-events: auto;
+    z-index: 2;
+    transition: opacity $base-duration $ease $base-duration;
+
+    .is-site-intro & {
+        opacity: 0;
+    }
+}
+.header__socials {
+    display: none;
+
+    .boxen-left-navi & {
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+
+        @include respond( $break-tablet-small ) {
+            display: none;
+        }
+    }
+
+    .sqs-layout {
+        display: inline-block;
+    }
+
+    .sqs-layout.empty {
+        width: 216px;
+        height: 36px;
+        outline: 1px solid red;
+    }
+}

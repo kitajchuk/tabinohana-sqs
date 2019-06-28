@@ -1,0 +1,237 @@
+@boxenBlack: #000;
+@boxenWhite: #FFFDE4;
+@boxenTeal: #2AFFEA;
+@boxenPurple: #6441a4;
+@boxenGrey: #959595;
+@boxenPink: #F49AC1;
+@mobileWidth: 640px;
+
+
+
+// tweak: { "type" : "value", "title" : "Primary Header Height", "category" : "Sizes", "min" : 80, "max" : 400, "step" : 5, "js" : true }
+@primaryHeaderHeight: 315px;
+
+
+
+// tweak: { "type" : "value", "title" : "Primary Mobile Header Height", "category" : "Sizes", "min" : 80, "max" : 200, "step" : 5, "js" : true }
+@primaryHeaderHeightMobile: 100px;
+
+
+
+// tweak: { "type" : "value", "title" : "Primary Detail Page Header Height", "category" : "Sizes", "min" : 80, "max" : 200, "step" : 5, "js" : true }
+@primaryHeaderHeightDetail: 160px;
+
+.header {
+    height: @primaryHeaderHeight;
+
+    @media only screen and ( max-width: 640px ) {
+        height: @primaryHeaderHeightMobile;
+    }
+}
+.is-uid-page .header,
+.is-boxen-page .header {
+    height: @primaryHeaderHeightDetail;
+
+    @media only screen and ( max-width: 640px ) {
+        height: @primaryHeaderHeightMobile;
+    }
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Background Color", "category" : "Colors", "js" : true }
+@primaryBGColor: #000;
+
+html {
+    background-color: @primaryBGColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Header Color", "category" : "Colors", "js" : true }
+@primaryHeaderBGColor: #FFFDE4;
+
+.header:before {
+    background-color: @primaryHeaderBGColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Text Color", "category" : "Colors", "js" : true }
+@primaryTextColor: #FFFDE4;
+
+html {
+    color: @primaryTextColor;
+}
+.is-uid-page .header:before,
+.is-boxen-page .header:before,
+.is-navi-mobile .header:before {
+    background-color: @primaryBGColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Navi Color", "category" : "Colors", "js" : true }
+@primaryNaviColor: #000;
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Navi Active Color", "category" : "Colors", "js" : true }
+@primaryNaviActiveColor: #6441a4;
+
+.navi__a {
+    color: @primaryNaviColor;
+}
+.navi__a.is-active,
+.is-boxen-page .navi__a.is-active,
+.is-uid-page .navi__a.is-active {
+    color: @primaryNaviActiveColor;
+}
+.is-boxen-page .navi__a,
+.is-uid-page .navi__a {
+    color: @primaryTextColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Logo Color", "category" : "Colors", "js" : true }
+@primaryLogoColor: #000;
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Active Logo Color", "category" : "Colors", "js" : true }
+@primaryLogoActiveColor: #000;
+
+._svg--logo {
+    fill: @primaryLogoColor;
+}
+.is-boxen-page ._svg--logo,
+.is-uid-page ._svg--logo,
+.is-navi-mobile ._svg--logo  {
+    fill: @primaryTextColor;
+}
+.is-home-page ._svg--logo {
+    fill: @primaryLogoActiveColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Button Color", "category" : "Colors", "js" : true }
+@primaryButtonColor: #2AFFEA;
+
+.btn {
+    background-color: @primaryButtonColor;
+
+    .is-hoverable &:hover {
+        background-color: mix( black, @primaryButtonColor, 25% );
+    }
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Input Border Color", "category" : "Colors", "js" : true }
+@primaryInputColor: #6441a4;
+
+.inp,
+.sel,
+.area {
+    border-color: @primaryInputColor;
+}
+.sel-wrap:before {
+    background-color: @primaryInputColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Link Color", "category" : "Colors", "js" : true }
+@primaryLinkColor: #2AFFEA;
+
+p, h1, h2, h3 {
+    a {
+        color: @primaryLinkColor;
+        border-bottom: 1px solid @primaryLinkColor;
+        transition: border-bottom-color 500ms ease,
+                    color 500ms ease;
+
+        &.is-active,
+        .is-hoverable &:hover,
+        .is-hoverable &.is-active:hover {
+            border-bottom-color: transparent;
+            color: mix( black, @primaryLinkColor, 25% );
+        }
+    }
+}
+.teal {
+    color: @primaryLinkColor;
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Emphasis Color", "category" : "Colors", "js" : true }
+@primaryEmColor: #2AFFEA;
+
+p, h1, h2, h3 {
+    em {
+        color: @primaryEmColor;
+    }
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Bold Color", "category" : "Colors", "js" : true }
+@primaryBoldColor: #959595;
+
+p, h1, h2, h3 {
+    strong {
+        color: @primaryBoldColor;
+    }
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Bold Emphasis Color", "category" : "Colors", "js" : true }
+@primaryBoldEmColor: #F49AC1;
+
+p, h1, h2, h3 {
+    em {
+        strong {
+            color: @primaryBoldEmColor;
+        }
+    }
+
+    strong {
+        em {
+            color: @primaryBoldEmColor;
+        }
+    }
+}
+
+
+
+// tweak: { "type" : "color", "title" : "Primary Social Icon Color", "category" : "Colors", "js" : true }
+@primarySocialColor: #2AFFEA;
+
+._svg--npm,
+._svg--tabi,
+._svg--kickstarter,
+.social-icons-color-white.social-icons-style-regular .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-use--icon {
+    fill: @primarySocialColor;
+}
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-use--icon,
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover ._svg,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover ._svg {
+    fill: mix( black, @primarySocialColor, 50% );
+}
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover .sqs-use--icon,
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover ._svg,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover ._svg {
+    fill: @primarySocialColor;
+}
+
+
+
+// tweak: { "type" : "checkbox", "title" : "Boxen Left Navi", "active" : false, "js" : true }
+.boxen-left-navi {}

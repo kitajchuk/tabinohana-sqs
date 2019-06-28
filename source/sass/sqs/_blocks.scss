@@ -1,0 +1,130 @@
+/******************************************************************************
+ * SQS Blocks
+*******************************************************************************/
+.sqs-block-spacer {
+    .sqs-block-content {
+        height: 0 !important;
+        @include spacer();
+    }
+}
+.sqs-block-horizontalrule {
+    hr {
+        @include ruler();
+    }
+}
+.sqs-block-form {
+    .sqs-block-content {
+        @include wrap();
+    }
+}
+.sqs-block-video {
+    .sqs-block-content {
+        @include wrap();
+        @include wrap-mobile-media();
+    }
+}
+.sqs-block-quote {
+    .sqs-block-content {
+        @include wrap();
+    }
+
+    blockquote {
+        @include h1();
+        color: $grey-dark;
+    }
+
+    figcaption {
+        @include m();
+        color: $teal;
+        max-width: $text-width-2;
+        text-align: right;
+    }
+}
+.sqs-block-tagcloud {
+    .sqs-block-content {
+        @include wrap();
+    }
+
+    .sqs-tagcloud {
+        li {
+            display: block;
+        }
+
+        li a {
+            @include m();
+            @include a( $teal );
+        }
+    }
+}
+.sqs-block-html {
+    .sqs-block-content {
+        @include wrap();
+
+        blockquote {
+            p {
+                @include m();
+
+                &:not( [data-rte-preserve-empty] ) {
+                    @include respond( $mobile-breakpoint ) {
+                        display: inline;
+                    }
+                }
+            }
+        }
+
+        blockquote + p,
+        blockquote + h1,
+        blockquote + h2,
+        blockquote + h3,
+        blockquote + blockquote {
+            margin-top: $expander-0;
+        }
+
+        p[data-rte-preserve-empty] {
+            .cms & {
+                height: $expander-0;
+            }
+        }
+    }
+}
+.sqs-block-button{
+    .sqs-block-content {
+        @include wrap();
+        margin-top: $expander-0;
+    }
+}
+.sqs-block-code {
+    .sqs-block-content {
+        @include wrap();
+
+        .btn {
+            margin-top: $expander-0;
+        }
+
+        pre {
+            @include mono();
+            white-space: pre;
+            overflow: auto;
+            padding-top: $expander-0;
+            padding-bottom: $expander-0;
+        }
+    }
+}
+.sqs-block-newsletter {
+    .sqs-block-content {}
+}
+.sqs-block-summary-v2 {
+    .sqs-block-content {}
+}
+.sqs-block-product {
+    .sqs-block-content {}
+}
+.sqs-block-audio {
+    .sqs-block-content {}
+}
+.sqs-block-gallery {
+    .sqs-block-content {}
+}
+.sqs-block-image {
+    .sqs-block-content {}
+}

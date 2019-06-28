@@ -1,0 +1,21 @@
+.main {
+    transition: opacity $base-duration $ease $base-duration;
+
+    .is-site-intro & {
+        opacity: 0;
+    }
+
+    .is-navi-mobile & {
+        pointer-events: none;
+    }
+
+    > .cms {
+        .is-404-page & {
+            @include wrap();
+            @include exp();
+        }
+    }
+}
+.router {
+    display: none;
+}

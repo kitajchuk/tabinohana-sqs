@@ -1,0 +1,106 @@
+/******************************************************************************
+ * SQS Overrides
+*******************************************************************************/
+.sqs-layout:not(.sqs-editing) > .sqs-row:first-child > [class*="sqs-col"]:first-child > .sqs-block:last-child,
+.sqs-layout:not(.sqs-editing) .sqs-block + .sqs-row .sqs-block:not(.float):last-child {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.newsletter-block:not(.rendered) {
+    opacity: 1 !important;
+}
+ul[data-rte-list] li > *:first-child::before,
+ol[data-rte-list] li > *:first-child::before {
+    margin-left: 0;
+    min-width: 0;
+    width: 0;
+    content: "";
+    padding-right: 0;
+    text-align: left;
+    display: none;
+}
+ul[data-rte-list] li > *, ol[data-rte-list] li > * {
+    margin: 0!important;
+}
+.sqs-layout:not(.sqs-editing) .sqs-block + .sqs-row .sqs-block:not(.float):first-child {
+    padding-top: 0!important;
+}
+.sqs-block-gallery {
+    .sqs-intrinsic {
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .sqs-intrinsic .sqs-intrinsic-content {
+        position: relative !important;
+        top: auto;
+        left: auto;
+        height: auto;
+        max-width: none;
+        width: 100%;
+    }
+}
+input.inp:focus {
+    box-shadow: none !important;
+}
+
+
+
+/******************************************************************************
+ * Social links...
+ * Supports Light/Dark Standard icons
+*******************************************************************************/
+.sqs-use--icon, .sqs-use--mask {
+    transition: fill $base-duration $ease;
+}
+// tweak
+.social-icons-color-white.social-icons-style-regular .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-use--icon {
+    fill: $teal;
+}
+// tweak
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-use--icon,
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover ._svg,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover ._svg {
+    fill: mix( black, $teal, 50% );
+}
+// tweak
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover .sqs-use--icon,
+.social-icons-color-white.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover ._svg,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover .sqs-use--icon,
+.social-icons-color-black.social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover ._svg {
+    fill: $teal;
+}
+.social-icons-style-regular .sqs-svg-icon--wrapper.npm-unauth > div,
+.social-icons-style-regular .sqs-svg-icon--wrapper.tabi-unauth > div,
+.social-icons-style-regular .sqs-svg-icon--wrapper.kickstarter-unauth > div {
+    transform: none !important;
+}
+.social-icons-size-extra-large.social-icons-style-regular .sqs-svg-icon--wrapper.npm-unauth,
+.social-icons-size-medium:not(.social-icons-style-regular) .sqs-svg-icon--wrapper.npm-unauth {
+    width: 64px !important;
+    height: 20.48px !important;
+}
+.social-icons-size-extra-large.social-icons-style-regular .sqs-svg-icon--wrapper.tabi-unauth,
+.social-icons-size-medium:not(.social-icons-style-regular) .sqs-svg-icon--wrapper.tabi-unauth {
+    width: 43px !important;
+    height: 29px !important;
+}
+.social-icons-size-extra-large.social-icons-style-regular .sqs-svg-icon--wrapper.kickstarter-unauth,
+.social-icons-size-medium:not(.social-icons-style-regular) .sqs-svg-icon--wrapper.kickstarter-unauth {
+    width: 25.18px !important;
+    height: 28px !important;
+}
+.sqs-svg-icon--wrapper {
+    vertical-align: middle;
+}
+.social-icons-size-extra-large.social-icons-style-regular.social-icon-alignment-center .sqs-svg-icon--wrapper {
+    @include respond( $mobile-breakpoint ) {
+        margin: 9px;
+    }
+}
+.social-icons-size-extra-large.social-icons-style-regular.social-icon-alignment-center .sqs-svg-icon--wrapper.kickstarter-unauth {
+    margin: 0 15px;
+}

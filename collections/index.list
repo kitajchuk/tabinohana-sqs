@@ -1,0 +1,3 @@
+{.section collection}
+    {@|apply cover.block}
+{.end}

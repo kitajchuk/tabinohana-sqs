@@ -1,0 +1,3 @@
+<div class="search js-search" data-results=".js-search-results">
+    <script type="application/json">{@|json}</script>
+</div>
