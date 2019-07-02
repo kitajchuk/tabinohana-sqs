@@ -1,6 +1,5 @@
 // import $ from "properjs-hobo";
 const svgMap = {
-    npm: require( `../../../blocks/svg-npm.block` ),
     tabi: require( `../../../blocks/svg-tabi.block` ),
     kickstarter: require( `../../../blocks/svg-kickstarter.block` )
 };

@@ -57,3 +57,6 @@
 .-fzero {
     font-size: 0;
 }
+.-center-text {
+    @include center-text();
+}

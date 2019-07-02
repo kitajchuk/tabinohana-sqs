@@ -128,10 +128,10 @@ $mason-gap: 55px;
     @include m();
     padding-top: $meta-nudge;
 
-    p {
-        @include m();
-        color: $grey-dark;
-    }
+    // p {
+    //     @include m();
+    //     color: $grey-dark;
+    // }
 }
 .mason__info {
     padding-top: $meta-nudge-2;;
@@ -170,16 +170,18 @@ $mason-gap: 55px;
     }
 
     // .stack__bounce {
+    //     text-align: right;
+    //
+    //     .product__buy {
+    //         margin-top: $expander-0;
+    //     }
+    //
     //     @include respond( $tablet-breakpoint ) {
+    //         text-align: left;
     //         width: 100%;
     //         margin-top: $expander-0;
     //     }
     // }
-}
-.stack__bounce {
-    .btn {
-        width: 256px;
-    }
 }
 
 

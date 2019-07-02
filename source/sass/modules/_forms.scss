@@ -1,7 +1,7 @@
 /******************************************************************************
  * Forms
 *******************************************************************************/
-$email-width: 375px;
+$email-width: 320px;
 
 
 
@@ -14,7 +14,7 @@ $email-width: 375px;
     }
 
     &[data-block="newsletter"] {
-        max-width: $mobile-breakpoint;
+        max-width: $mobile-breakpoint + 26px;
 
         input[type="name"] {
             display: none;
@@ -84,7 +84,7 @@ $email-width: 375px;
     }
 
     p, div {
-        max-width: $form-width;
+        // max-width: $form-width;
 
         @include respond( $tablet-breakpoint ) {
             display: inline-block;

@@ -1,6 +1,19 @@
 /******************************************************************************
  * SQS Blocks
 *******************************************************************************/
+// Block Fields
+#boxen--footer-socials {
+    .header & {
+        transform: translate3d( 16px, 0, 0 );
+    }
+}
+#boxen--footer-main {
+    padding-top: $expander-m;
+    padding-bottom: $expander-1;
+}
+
+
+
 .sqs-block-spacer {
     .sqs-block-content {
         height: 0 !important;
@@ -15,6 +28,23 @@
 .sqs-block-form {
     .sqs-block-content {
         @include wrap();
+    }
+}
+.sqs-block-image {
+    .sqs-block-content {
+        .image-wrap {
+            .cms & {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .image {
+            .cms & {
+                max-width: $text-width;
+                display: inline-block;
+            }
+        }
     }
 }
 .sqs-block-video {
@@ -60,6 +90,17 @@
     .sqs-block-content {
         @include wrap();
 
+        .sqs-layout[data-type="page"] & {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1, h2, h3, p, blockquote {
+            .sqs-layout[data-type="page"] & {
+                display: inline-block;
+            }
+        }
+
         blockquote {
             p {
                 @include m();
@@ -87,10 +128,15 @@
         }
     }
 }
-.sqs-block-button{
+.sqs-block-button {
     .sqs-block-content {
         @include wrap();
         margin-top: $expander-0;
+
+        .sqs-layout[data-type="page"] & {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 .sqs-block-code {
@@ -123,8 +169,5 @@
     .sqs-block-content {}
 }
 .sqs-block-gallery {
-    .sqs-block-content {}
-}
-.sqs-block-image {
     .sqs-block-content {}
 }

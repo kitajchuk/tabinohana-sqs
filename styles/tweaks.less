@@ -83,6 +83,7 @@ html {
     color: @primaryNaviColor;
 }
 .navi__a.is-active,
+.navi-mobile__a.is-active,
 .is-boxen-page .navi__a.is-active,
 .is-uid-page .navi__a.is-active {
     color: @primaryNaviActiveColor;
@@ -90,6 +91,10 @@ html {
 .is-boxen-page .navi__a,
 .is-uid-page .navi__a {
     color: @primaryTextColor;
+}
+.cssicon--list div,
+.is-navi-mobile .cssicon--list div {
+    background-color: @primaryNaviActiveColor;
 }
 
 
@@ -119,7 +124,13 @@ html {
 // tweak: { "type" : "color", "title" : "Primary Button Color", "category" : "Colors", "js" : true }
 @primaryButtonColor: #2AFFEA;
 
+
+
+// tweak: { "type" : "color", "title" : "Primary Button Text Color", "category" : "Colors", "js" : true }
+@primaryButtonTextColor: #000;
+
 .btn {
+    color: @primaryButtonTextColor;
     background-color: @primaryButtonColor;
 
     .is-hoverable &:hover {
@@ -211,7 +222,6 @@ p, h1, h2, h3 {
 // tweak: { "type" : "color", "title" : "Primary Social Icon Color", "category" : "Colors", "js" : true }
 @primarySocialColor: #2AFFEA;
 
-._svg--npm,
 ._svg--tabi,
 ._svg--kickstarter,
 .social-icons-color-white.social-icons-style-regular .sqs-use--icon,

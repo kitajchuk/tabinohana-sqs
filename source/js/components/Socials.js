@@ -18,10 +18,6 @@ class Socials {
         this.tick = 0;
         this.tests = [
             {
-                name: "npm",
-                regex: /npmjs\.com/
-            },
-            {
                 name: "tabi",
                 regex: /tabinohana\.com/
             },

@@ -61,11 +61,13 @@
             </div>
             <div class="footer__wrap -wrap">
                 <div class="footer__main">
+                    {@|apply svg-tabinohana.block}
                     <squarespace:block-field id="boxen--footer-main" columns="12" />
+                    {@|apply svg-rainbowpop.block}
                 </div>
-                <div class="footer__socials">
+                <!-- <div class="footer__socials">
                     <squarespace:block-field id="boxen--footer-socials" columns="12" />
-                </div>
+                </div> -->
             </div>
         </footer>
         <div class="intro js-intro screen screen--dark is-active"></div>

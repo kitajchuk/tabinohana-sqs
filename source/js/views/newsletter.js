@@ -8,13 +8,13 @@ export default ( instance ) => {
         let ret = ``;
 
         if ( field.name ) {
-            ret = `<input type="${field.type}" class="inp inp--grey js-form-input" ${field.required ? `required` : ``} placeholder="Your name" name="${field.id}" value="Automoton" />`;
+            ret = `<input type="${field.type}" class="inp js-form-input" ${field.required ? `required` : ``} placeholder="Name" name="${field.id}" value="Automoton" />`;
         }
 
         if ( field.email ) {
             ret = `
-                <input type="email" class="inp inp--grey js-form-input" ${field.required ? `required` : ``} placeholder="Your email" name="${field.id}" />
-                <button type="submit" class="btn btn--grey js-form-submit">${instance.blockJson.form.submitButtonText}</button>
+                <input type="email" class="inp js-form-input" ${field.required ? `required` : ``} placeholder="Email address" name="${field.id}" />
+                <button type="submit" class="btn js-form-submit">${instance.blockJson.form.submitButtonText}</button>
             `;
         }
 
@@ -24,8 +24,8 @@ export default ( instance ) => {
     return `
         <div class="form__entry">
             <div class="form__fieldset form__fieldset--title">
-                <p class="grey">${instance.blockJson.title}</p>
-                <div class="m dark">${instance.blockJson.description.html}</div>
+                <h1 class="teal">${instance.blockJson.title}</h1>
+                <div class="m">${instance.blockJson.description.html}</div>
             </div>
             ${instance.blockJson.form.parsedFields.map(( field ) => {
                 return `<div class="form__fieldset form__fieldset--inline">${getField( field )}</div>`;
