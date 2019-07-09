@@ -30,8 +30,8 @@ export default ( instance ) => {
                         <a class="mason__link" href="${item.itemUrl || item.fullUrl}">
                             <img class="mason__image image js-lazy-image" data-img-src="${item.imageUrl || item.assetUrl}" data-variants="100w,300w,500w,750w,1000w,1500w,2500w" />
                             <div class="mason__info -center-text">
-                                <div class="mason__title"><p>${formatTitle( item.title )}</p></div>
-                                <div class="mason__meta"><p><em>$${variant.priceMoney.value}</em></p></div>
+                                <div class="mason__title"><h3>${formatTitle( item.title )}</h3></div>
+                                <div class="mason__meta"><h3><em>$${variant.priceMoney.value}</em></h3></div>
                             </div>
                         </a>
                     </div>

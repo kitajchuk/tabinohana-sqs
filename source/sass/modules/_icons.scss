@@ -22,13 +22,13 @@
                     background-color $base-duration $ease,
                     top $base-duration $ease;
 
-        .is-navi-mobile & {
-            background-color: $white;
-        }
-
-        .is-uid-page & {
-            background-color: $white;
-        }
+        // .is-navi-mobile & {
+        //     background-color: $white;
+        // }
+        //
+        // .is-uid-page & {
+        //     background-color: $white;
+        // }
 
         &:nth-child( 1 ) {
             .is-navi-mobile & {

@@ -33,11 +33,15 @@ export default ( instance ) => {
                 }).join( "" )}
             </div>
             <div class="product__info cms">
+                <div class="product__desc">
+                    ${item.excerpt}
+                </div>
                 <div class="product__buy">
                     <a class="btn js-cart-add" href="#"><span class="btn__a">${item.structuredContent.customAddButtonText}</span></a>
                 </div>
                 <div class="product__about">
                     ${item.body}
+                    <div class="product__limited m yellow">Supplies are limited!</div>
                 </div>
             </div>
         </div>
