@@ -181,7 +181,7 @@ p, h1, h2, h3 {
 // tweak: { "type" : "color", "title" : "Primary Emphasis Color", "category" : "Colors", "js" : true }
 @primaryEmColor: #2AFFEA;
 
-p, h1, h2, h3 {
+p, h1, h2, h3, .p, .h1, .h2, .h3 {
     em {
         color: @primaryEmColor;
     }
@@ -192,7 +192,7 @@ p, h1, h2, h3 {
 // tweak: { "type" : "color", "title" : "Primary Bold Color", "category" : "Colors", "js" : true }
 @primaryBoldColor: #959595;
 
-p, h1, h2, h3 {
+p, h1, h2, h3, .p, .h1, .h2, .h3 {
     strong {
         color: @primaryBoldColor;
     }
@@ -203,7 +203,7 @@ p, h1, h2, h3 {
 // tweak: { "type" : "color", "title" : "Primary Bold Emphasis Color", "category" : "Colors", "js" : true }
 @primaryBoldEmColor: #F49AC1;
 
-p, h1, h2, h3 {
+p, h1, h2, h3, .p, .h1, .h2, .h3 {
     em {
         strong {
             color: @primaryBoldEmColor;
@@ -224,6 +224,7 @@ p, h1, h2, h3 {
 
 ._svg--tabi,
 ._svg--kickstarter,
+._svg--patreon,
 .social-icons-color-white.social-icons-style-regular .sqs-use--icon,
 .social-icons-color-black.social-icons-style-regular .sqs-use--icon {
     fill: @primarySocialColor;

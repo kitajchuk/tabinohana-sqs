@@ -2,6 +2,7 @@ export default ( instance ) => {
     const starred = instance.data.items.find(( item ) => item.starred );
     const starVariant = starred.structuredContent.variants[ 0 ];
     const items = instance.data.items.filter(( item ) => !item.starred );
+    const sysDataVars = "100w,300w,500w,750w,1000w,1500w,2500w";
     const formatTitle = ( title ) => {
         return title.replace( /\s\(/, "<br />(" );
     };
@@ -28,7 +29,7 @@ export default ( instance ) => {
                 return `
                     <div class="mason__item">
                         <a class="mason__link" href="${item.itemUrl || item.fullUrl}">
-                            <img class="mason__image image js-lazy-image" data-img-src="${item.imageUrl || item.assetUrl}" data-variants="100w,300w,500w,750w,1000w,1500w,2500w" />
+                            <img class="mason__image image js-lazy-image" data-img-src="${item.imageUrl || item.assetUrl}" data-variants="${item.systemDataVariants || sysDataVars}" data-original-size="${item.originalSize ? item.originalSize : ``}" />
                             <div class="mason__info -center-text">
                                 <div class="mason__title"><h3>${formatTitle( item.title )}</h3></div>
                                 <div class="mason__meta"><h3><em>$${variant.priceMoney.value}</em></h3></div>

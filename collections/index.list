@@ -1,3 +1,54 @@
 {.section collection}
-    {@|apply cover.block}
+    {.equal? urlId "tabi"}
+        <div class="tabi js-tabi">
+            <div class="tabi__desc -wrap -exp -center-text">
+                {description}
+            </div>
+            <div class="tabi__promo">
+
+            </div>
+            <div class="tabi__hero -wrap">
+                <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+            </div>
+            <div class="tabi__chapters -wrap">
+                {.repeated section collections}
+                    <a class="tabi__chapter" href="{items.0.fullUrl}">
+                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                        <div class="tabi__chapter__info">
+                            <div class="h2">{navigationTitle}<br />{title}</div>
+                            <button class="btn btn--black">Read this chapter</button>
+                        </div>
+                    </a>
+                {.end}
+            </div>
+            {@|apply expander.block}
+        </div>
+    {.end}
+    {.equal? urlId "cast"}
+        <div class="cast js-cast">
+            <div class="cast__mast -wrap -exp -center-text">
+                <div class="h1"><em>{description}</em></div>
+            </div>
+            {.repeated section collections}
+                <div class="cast__title -wrap -center-text">
+                    <div class="h1">{title}</div>
+                </div>
+                <div class="cast__family -wrap">
+                    {.repeated section items}
+                        <div class="cast__member -expb">
+                            <div class="cast__wrap">
+                                <div class="cast__image">
+                                    <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+                                </div>
+                                <div class="cast__info">
+                                    <div class="p"><em>{title}</em></div>
+                                    {body}
+                                </div>
+                            </div>
+                        </div>
+                    {.end}
+                </div>
+            {.end}
+        </div>
+    {.end}
 {.end}

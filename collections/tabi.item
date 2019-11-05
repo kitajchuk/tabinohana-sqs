@@ -1,0 +1,22 @@
+{.section item}
+    <div class="tabi js-tabi">
+        <div class="tabi__page -wrap -text--center">
+            <div class="tabi__comic">
+                <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+            </div>
+        </div>
+        <div class="tabi__controls -wrap -text--center">
+            <a class="btn {.if pagination.prevItem}{.or}btn--grey{.end}" href="{.if pagination.prevItem}{pagination.prevItem.fullUrl}{.or}#{.end}">Prev</a>
+            <a class="btn {.if pagination.nextItem}{.or}btn--grey{.end}" href="{.if pagination.nextItem}{pagination.nextItem.fullUrl}{.or}#{.end}">Next</a>
+        </div>
+        <div class="tabi__title -wrap -center-text">
+            <div class="m teal">{collection.navigationTitle}</div>
+            <p>{collection.title}</p>
+        </div>
+        {.section customContent.chapterCredits}
+            <div class="tabi__credits -wrap -expt -center-text">
+                {html}
+            </div>
+        {.end}
+    </div>
+{.end}

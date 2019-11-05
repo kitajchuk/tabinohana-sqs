@@ -200,7 +200,7 @@ $email-width: 320px;
 }
 .btn.btn--red {
     background-color: $red;
-    color: mix( black, $red, 90% );
+    color: $white;
 
     .is-hoverable &:hover {
         background-color: mix( black, $red, 25% );
@@ -208,7 +208,7 @@ $email-width: 320px;
 }
 .btn.btn--pink {
     background-color: $pink;
-    color: mix( black, $pink, 90% );
+    color: $white;
 
     .is-hoverable &:hover {
         background-color: mix( black, $pink, 25% );
@@ -216,7 +216,7 @@ $email-width: 320px;
 }
 .btn.btn--purple {
     background-color: $purple;
-    color: mix( black, $purple, 90% );
+    color: $white;
 
     .is-hoverable &:hover {
         background-color: mix( black, $purple, 25% );
@@ -224,7 +224,7 @@ $email-width: 320px;
 }
 .btn.btn--blue {
     background-color: $blue;
-    color: mix( black, $blue, 90% );
+    color: $white;
 
     .is-hoverable &:hover {
         background-color: mix( black, $blue, 25% );
@@ -236,5 +236,13 @@ $email-width: 320px;
 
     .is-hoverable &:hover {
         background-color: mix( black, $grey-dark, 25% );
+    }
+}
+.btn.btn--black {
+    background-color: $black;
+    color: $pink;
+
+    .is-hoverable &:hover {
+        background-color: mix( white, $black, 10% );
     }
 }

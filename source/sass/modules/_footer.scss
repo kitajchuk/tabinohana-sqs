@@ -36,6 +36,12 @@
     @include respond( $tablet-breakpoint ) {
         margin-bottom: $expander-1 / 2;
     }
+
+    > .sqs-layout {
+        .sqs-block-html .sqs-block-content {
+            max-width: 380px;
+        }
+    }
 }
 .footer__signup {
     .sqs-block-newsletter {

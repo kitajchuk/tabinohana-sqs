@@ -51,27 +51,33 @@
     font-size: $m-size-mobile;
     line-height: $m-line;
     @include font-family-monospace-bold();
-    max-width: $text-width;
+    width: $text-width;
+    max-width: 100%;
+
+    @include respond-min( $mobile-breakpoint ) {
+        font-size: $m-size;
+    }
+}
+@mixin mc() {
+    font-size: $m-size-mobile;
+    line-height: $m-line;
+    @include font-family-sans-bold();
 
     @include respond-min( $mobile-breakpoint ) {
         font-size: $m-size;
     }
 }
 @mixin m() {
-    font-size: $m-size-mobile;
-    line-height: $m-line;
-    @include font-family-sans-bold();
-    max-width: $text-width;
-
-    @include respond-min( $mobile-breakpoint ) {
-        font-size: $m-size;
-    }
+    @include mc();
+    width: $text-width;
+    max-width: 100%;
 }
 @mixin p() {
     font-size: $p-size-mobile;
     line-height: $p-line;
     @include font-family-sans-bold();
-    max-width: $text-width;
+    width: $text-width;
+    max-width: 100%;
 
     @include respond-min( $mobile-breakpoint ) {
         font-size: $p-size-fluid;
@@ -85,7 +91,8 @@
     font-size: $h1-size-mobile;
     line-height: $h1-line;
     @include font-family-sans-bold();
-    max-width: $text-width-2;
+    width: $text-width-2;
+    max-width: 100%;
 
     @include respond-min( $mobile-breakpoint ) {
         font-size: $h1-size-fluid;
@@ -99,7 +106,8 @@
     font-size: $h2-size-mobile;
     line-height: $h2-line;
     @include font-family-sans-bold();
-    max-width: $text-width;
+    width: $text-width;
+    max-width: 100%;
 
     @include respond-min( $mobile-breakpoint ) {
         font-size: $h2-size-fluid;
@@ -113,7 +121,8 @@
     font-size: $h3-size-mobile;
     line-height: $h3-line;
     @include font-family-sans-bold();
-    max-width: $text-width;
+    width: $text-width;
+    max-width: 100%;
 
     @include respond-min( $mobile-breakpoint ) {
         font-size: $h3-size-fluid;
@@ -185,7 +194,7 @@
  * Typography: UI
 *******************************************************************************/
 @mixin button() {
-    @include m();
+    @include mc();
     padding: 0 40px;
     line-height: 1;
     color: $black;

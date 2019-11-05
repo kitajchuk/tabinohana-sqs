@@ -1,0 +1,142 @@
+.tabi {
+    .sqs-block-html,
+    .sqs-block-button {
+        .sqs-block-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+        }
+    }
+}
+.tabi__desc {
+    p {
+        text-align: left;
+    }
+}
+
+
+
+.tabi__chapters {}
+.tabi__chapter {
+    display: block;
+    position: relative;
+    margin-top: $padding-1;
+
+    & + .tabi__chapter {
+        @include respond( $break-mobile-medium ) {
+            margin-top: $expander-m;
+        }
+    }
+}
+.tabi__chapter__info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: $padding-1;
+    padding-top: $padding-1;
+
+    .btn {
+        margin-top: $padding-1;
+
+        &.btn--black {
+            @include respond( $break-mobile-medium ) {
+                background-color: $grey-dark;
+            }
+
+            .is-hoverable &:hover {
+                @include respond( $break-mobile-medium ) {
+                    background-color: mix( black, $grey-dark, 25% );
+                }
+            }
+        }
+    }
+
+    @include respond( $break-mobile-medium ) {
+        position: relative;
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+
+
+.tabi__page {}
+.tabi__comic {
+    max-width: $text-width;
+    width: 100%;
+    display: inline-block;
+}
+.tabi__title {
+    margin-top: $padding-1;
+}
+.tabi__controls {
+    margin-top: $padding-1;
+
+    .btn {
+        margin: 0 ($padding-1 / 4);
+    }
+}
+.tabi__credits {
+    strong {
+        color: $grey-dark;
+    }
+
+    p {
+        @include mc();
+    }
+
+    p + p {
+        margin-top: $padding-1;
+    }
+}
+
+
+
+.cast {}
+.cast__title {
+    padding-bottom: $expander-0;
+}
+.cast__member {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &:nth-child( even ) {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}
+.cast__wrap {
+    display: inline-block;
+    max-width: $text-width;
+    width: 100%;
+}
+.cast__info {
+    padding-top: $expander-0;
+}
+
+
+
+.support {}
+.support__info {
+    padding-bottom: $expander-0;
+    text-align: left;
+}
+.support__member {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.support__wrap {
+    display: inline-block;
+    max-width: $text-width;
+    width: 100%;
+}
+.support__option {
+    text-align: center;
+}
+.support__info {
+    .btn {
+        margin-top: $expander-0;
+    }
+}

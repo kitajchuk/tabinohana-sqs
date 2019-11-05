@@ -61,7 +61,7 @@
         order: 2;
     }
 
-    .image + .image {
+    > div + div {
         margin-top: $expander-0;
     }
 }
