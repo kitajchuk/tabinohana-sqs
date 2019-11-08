@@ -1,6 +1,6 @@
 {.equal? collection.urlId "support"}
-    <div class="support js-support -center-text">
-        <div class="support__mast -wrap -exp">
+    <div class="support js-support">
+        <div class="support__mast -wrap -exp -center-text">
             <div class="h1"><em>{collection.description}</em></div>
         </div>
         <div class="support__options -wrap">
