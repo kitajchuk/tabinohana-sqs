@@ -77,7 +77,7 @@ class Controllers {
 
         this.init();
 
-        this.images = this.element.find( core.config.lazyImageSelector );
+        this.images = core.dom.body.find( core.config.lazyImageSelector );
         this.imageController = new ImageController( this.images );
         this.imageController.on( "preloaded", () => {
             if ( this.callback ) {

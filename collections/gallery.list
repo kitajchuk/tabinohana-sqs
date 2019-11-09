@@ -10,12 +10,11 @@
                         <div class="support__info">
                             <div class="h2"><em>{title}</em></div>
                             {body}
-                            {.if sourceUrl}
-                                <a href="{sourceUrl}" class="btn" target="_blank">{title}</a>
-                            {.end}
                         </div>
                         <div class="support__image">
-                            <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+                            <a href="{.if sourceUrl}{sourceUrl}{.or}#{.end}" target="_blank">
+                                <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+                            </a>
                         </div>
                     </div>
                 </div>

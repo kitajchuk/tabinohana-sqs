@@ -64,6 +64,11 @@
                 {.end}
         </main>
         <footer class="footer js-footer">
+            <div class="footer__patreon -wrap">
+                <a href="https://patreon.com/tabinohana" target="_blank">
+                    <img class="image js-lazy-image" data-img-src="/assets/img/Tabi_Patreon_Banner.png" />
+                </a>
+            </div>
             {@|apply ruler.block}
             <div class="footer__signup -wrap">
                 <squarespace:block-field id="boxen--footer-signup" columns="12" />

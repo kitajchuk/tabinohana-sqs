@@ -1,14 +1,13 @@
 {.section collection}
     {.equal? urlId "tabi"}
         <div class="tabi js-tabi">
+            <div class="tabi__hero -wrap -expt">
+                <a href="/store/">
+                    <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                </a>
+            </div>
             <div class="tabi__desc -wrap -exp -center-text">
                 {description}
-            </div>
-            <div class="tabi__promo">
-
-            </div>
-            <div class="tabi__hero -wrap">
-                <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
             </div>
             <div class="tabi__chapters -wrap">
                 {.repeated section collections}

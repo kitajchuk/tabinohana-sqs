@@ -11,12 +11,12 @@
         padding-right: 0;
     }
 
-    .sqs-block-horizontalrule hr {
-        .is-home-page &,
-        .is-colophon-page & {
-            margin-top: 0;
-        }
-    }
+    // .sqs-block-horizontalrule hr {
+    //     .is-home-page &,
+    //     .is-colophon-page & {
+    //         margin-top: 0;
+    //     }
+    // }
 }
 .footer__wrap {
     display: flex;
@@ -63,5 +63,19 @@
                 margin: $expander-0 0;
             }
         }
+    }
+}
+.footer__patreon {
+    text-align: center;
+
+    .is-support-page & {
+        display: none;
+    }
+
+    a {
+        display: block;
+        display: inline-block;
+        max-width: $text-width;
+        width: 100%;
     }
 }
