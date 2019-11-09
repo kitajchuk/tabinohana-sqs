@@ -13,6 +13,15 @@
         text-align: left;
     }
 }
+.tabi__hero {
+    @include wrap();
+    @include expt();
+
+    @include respond( $mobile-breakpoint ) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 
 
 
