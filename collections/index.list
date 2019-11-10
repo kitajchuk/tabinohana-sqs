@@ -14,8 +14,11 @@
                     <a class="tabi__chapter" href="{items.0.fullUrl}">
                         <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
                         <div class="tabi__chapter__info">
-                            <div class="h2">{navigationTitle}<br />{title}</div>
-                            <button class="btn btn--black">Read this chapter</button>
+                            <div>
+                                <div class="p">{navigationTitle}</div>
+                                <div class="h2">{title}</div>
+                                <button class="btn btn--black">Read here</button>
+                            </div>
                         </div>
                     </a>
                 {.end}

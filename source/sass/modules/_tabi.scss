@@ -15,7 +15,6 @@
 }
 .tabi__hero {
     @include wrap();
-    @include expt();
 
     @include respond( $mobile-breakpoint ) {
         padding-left: 0;
@@ -25,15 +24,61 @@
 
 
 
-.tabi__chapters {}
+.tabi__chapters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .tabi__chapter {
     display: block;
     position: relative;
     margin-top: $padding-1;
+    width: 100%;
 
-    & + .tabi__chapter {
-        @include respond( $break-mobile-medium ) {
-            margin-top: $expander-m;
+    @include respond( $mobile-breakpoint ) {
+        margin-top: $padding-1 / 2;
+    }
+
+    // In all its forms
+    &:nth-child( 1 ) {
+
+    }
+
+    // And so it will be
+    // And then there were two
+    &:nth-child( 2 ),
+    &:nth-child( 3 ) {
+        width: sqs-calc( "50% - (#{$padding-1} / 2)" );
+
+        .image-aspect {
+            @include respond( $mobile-breakpoint ) {
+                padding-bottom: 75% !important;
+                overflow: hidden;
+            }
+
+            .image {
+                @include respond( $mobile-breakpoint ) {
+                    height: auto;
+                    top: 50%;
+                    transform: translate3d( 0, -50%, 0 );
+                }
+            }
+        }
+
+        @include respond( $mobile-breakpoint ) {
+            width: 100%;
+        }
+    }
+
+    // A day in her life
+    &:nth-child( 4 ) {
+
+    }
+
+    .h2 {
+        @include respond( $tablet-breakpoint ) {
+            @include h3();
         }
     }
 }
@@ -41,29 +86,27 @@
     position: absolute;
     left: 0;
     top: 0;
-    padding-left: $padding-1;
-    padding-top: $padding-1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include wrap();
+    background-color: rgba( 0, 0, 0, 0.25 );
+
+    > div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .p,
+    .h2 {
+        max-width: 100%;
+        width: 100%;
+    }
 
     .btn {
         margin-top: $padding-1;
-
-        &.btn--black {
-            @include respond( $break-mobile-medium ) {
-                background-color: $grey-dark;
-            }
-
-            .is-hoverable &:hover {
-                @include respond( $break-mobile-medium ) {
-                    background-color: mix( black, $grey-dark, 25% );
-                }
-            }
-        }
-    }
-
-    @include respond( $break-mobile-medium ) {
-        position: relative;
-        padding-left: 0;
-        text-align: center;
     }
 }
 
@@ -85,17 +128,9 @@
         margin: 0 ($padding-1 / 4);
     }
 }
-.tabi__credits {
-    strong {
-        color: $grey-dark;
-    }
-
+.tabi__text {
     p {
-        @include mc();
-    }
-
-    p + p {
-        margin-top: $padding-1;
+        display: inline-block;
     }
 }
 

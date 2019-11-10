@@ -1,3 +1,4 @@
+{.var @desc collection.description}
 {.section item}
     <div class="tabi js-tabi">
         <div class="tabi__page -wrap -text--center">
@@ -13,10 +14,11 @@
             <div class="m teal">{collection.navigationTitle}</div>
             <p>{collection.title}</p>
         </div>
-        {.section customContent.chapterCredits}
-            <div class="tabi__credits -wrap -expt -center-text">
-                {html}
+        {.if @desc}
+            <div class="tabi__text -wrap -expt -text--center">
+                {@desc}
             </div>
         {.end}
+        {@|apply expander.block}
     </div>
 {.end}
