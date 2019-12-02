@@ -1,88 +1,4 @@
-.tabi {
-    .sqs-block-html,
-    .sqs-block-button {
-        .sqs-block-content {
-            display: flex;
-            justify-content: center;
-            margin-top: 0;
-        }
-    }
-}
-.tabi__desc {
-    p {
-        text-align: left;
-    }
-}
-.tabi__hero {
-    @include wrap();
-
-    @include respond( $mobile-breakpoint ) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-
-
-.tabi__chapters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.tabi__chapter {
-    display: block;
-    position: relative;
-    margin-top: $padding-1;
-    width: 100%;
-
-    @include respond( $mobile-breakpoint ) {
-        margin-top: $padding-1 / 2;
-    }
-
-    // In all its forms
-    &:nth-child( 1 ) {
-
-    }
-
-    // And so it will be
-    // And then there were two
-    &:nth-child( 2 ),
-    &:nth-child( 3 ) {
-        width: sqs-calc( "50% - (#{$padding-1} / 2)" );
-
-        .image-aspect {
-            @include respond( $mobile-breakpoint ) {
-                padding-bottom: 75% !important;
-                overflow: hidden;
-            }
-
-            .image {
-                @include respond( $mobile-breakpoint ) {
-                    height: auto;
-                    top: 50%;
-                    transform: translate3d( 0, -50%, 0 );
-                }
-            }
-        }
-
-        @include respond( $mobile-breakpoint ) {
-            width: 100%;
-        }
-    }
-
-    // A day in her life
-    &:nth-child( 4 ) {
-
-    }
-
-    .h2 {
-        @include respond( $tablet-breakpoint ) {
-            @include h3();
-        }
-    }
-}
-.tabi__chapter__info {
+@mixin info() {
     position: absolute;
     left: 0;
     top: 0;
@@ -107,7 +23,100 @@
 
     .btn {
         margin-top: $padding-1;
+
+        @include respond( $mobile-breakpoint ) {
+            margin-top: $padding-1 / 2;
+        }
     }
+}
+@mixin info-wrap() {
+    margin-top: $padding-1;
+    display: block;
+    position: relative;
+    width: 100%;
+
+    @include respond( $mobile-breakpoint ) {
+        margin-top: $padding-1 / 2;
+    }
+
+    .h2 {
+        @include respond( $tablet-breakpoint ) {
+            @include h3();
+        }
+    }
+}
+
+
+
+.tabi {
+    .sqs-block-html,
+    .sqs-block-button {
+        .sqs-block-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+        }
+    }
+}
+.tabi__desc {
+    p {
+        text-align: left;
+    }
+
+    p:nth-child( 1 ) {
+        @include h2();
+
+        em,
+        strong,
+        strong em,
+        em strong {
+            color: $purple;
+        }
+    }
+}
+.tabi__hero {
+    @include wrap();
+
+    @include respond( $mobile-breakpoint ) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+
+.tabi__chapters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.tabi__chapter {
+    @include info-wrap();
+
+    // In all its forms
+    &:nth-child( 1 ) {
+
+    }
+
+    // And so it will be
+    // And then there were two
+    &:nth-child( 2 ),
+    &:nth-child( 3 ) {
+        width: sqs-calc( "50% - (#{$padding-1} / 2)" );
+
+        @include respond( $mobile-breakpoint ) {
+            width: 100%;
+        }
+    }
+
+    // A day in her life
+    &:nth-child( 4 ) {
+
+    }
+}
+.tabi__chapter__info {
+    @include info();
 }
 
 
@@ -184,3 +193,21 @@
         margin-top: $expander-0;
     }
 }
+
+
+
+.extras {}
+.extras__page {
+    @include info-wrap();
+}
+.extras__page__info {
+    @include info();
+}
+// .extras__wrap {
+//     &.-wrap {
+//         @include respond( $mobile-breakpoint ) {
+//             padding-left: 0;
+//             padding-right: 0;
+//         }
+//     }
+// }

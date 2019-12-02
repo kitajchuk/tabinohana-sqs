@@ -60,3 +60,6 @@
 .-center-text {
     @include center-text();
 }
+.-strike {
+    text-decoration: line-through;
+}

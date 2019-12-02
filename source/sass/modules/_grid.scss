@@ -122,16 +122,16 @@ $mason-gap: 55px;
     width: 100%;
 }
 .mason__title {
-    @include p();
+    @include m();
+    color: $blue;
 }
 .mason__meta {
     @include m();
-    // padding-top: $meta-nudge;
 
-    // p {
-    //     @include m();
-    //     color: $grey-dark;
-    // }
+    p {
+        @include m();
+        color: $grey;
+    }
 }
 .mason__info {
     padding-top: $meta-nudge-2;;
@@ -233,10 +233,6 @@ $mason-gap: 55px;
     @include respond( $mobile-breakpoint ) {
         display: none;
     }
-}
-.slider__meta {
-    @include m();
-    padding-top: $meta-nudge;
 }
 
 

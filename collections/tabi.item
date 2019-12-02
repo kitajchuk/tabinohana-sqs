@@ -1,4 +1,5 @@
 {.var @desc collection.description}
+{.var @title collection.title|slugify}
 {.section item}
     <div class="tabi js-tabi">
         <div class="tabi__page -wrap -text--center">
@@ -7,8 +8,35 @@
             </div>
         </div>
         <div class="tabi__controls -wrap -text--center">
-            <a class="btn {.if pagination.prevItem}{.or}btn--grey{.end}" href="{.if pagination.prevItem}{pagination.prevItem.fullUrl}{.or}#{.end}">Prev</a>
-            <a class="btn {.if pagination.nextItem}{.or}btn--grey{.end}" href="{.if pagination.nextItem}{pagination.nextItem.fullUrl}{.or}#{.end}">Next</a>
+            {.if pagination.prevItem}
+                <a class="btn" href="{pagination.prevItem.fullUrl}">Prev</a>
+            {.or}
+                {.equal? @title "in-all-its-forms"}
+                    <a class="btn btn--grey" href="#">Prev</a>
+                {.or equal? @title "and-then-there-were-two"}
+                    <a class="btn" href="/tabi/in-all-its-forms/front-cover">Prev</a>
+                {.or equal? @title "and-so-it-will-be"}
+                    <a class="btn" href="/tabi/and-then-there-were-two/front-cover">Prev</a>
+                {.or equal? @title "a-day-in-her-life"}
+                    <a class="btn" href="/tabi/and-so-it-will-be/front-cover">Prev</a>
+                {.or}
+                {.end}
+            {.end}
+            {.if pagination.nextItem}
+                <a class="btn" href="{pagination.nextItem.fullUrl}">Next</a>
+            {.or}
+                {.equal? @title "in-all-its-forms"}
+                    <a class="btn" href="/tabi/and-then-there-were-two/front-cover">Next</a>
+                {.or equal? @title "and-then-there-were-two"}
+                    <a class="btn" href="/tabi/and-so-it-will-be/front-cover">Next</a>
+                {.or equal? @title "and-so-it-will-be"}
+                    <a class="btn" href="/tabi/a-day-in-her-life/front-cover">Next</a>
+                {.or equal? @title "a-day-in-her-life"}
+                    <a class="btn btn--grey" href="#">Next</a>
+                {.or}
+                    <a class="btn btn--grey" href="#">Next</a>
+                {.end}
+            {.end}
         </div>
         <div class="tabi__title -wrap -center-text">
             <div class="m teal">{collection.navigationTitle}</div>

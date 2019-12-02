@@ -17,7 +17,9 @@
                             <div>
                                 <div class="p">{navigationTitle}</div>
                                 <div class="h2">{title}</div>
-                                <button class="btn btn--black">Read here</button>
+                                <button class="btn btn--black">
+                                    {.equal? @index 4}Coming in 2020{.or}Read here{.end}
+                                </button>
                             </div>
                         </div>
                     </a>
@@ -51,6 +53,28 @@
                     {.end}
                 </div>
             {.end}
+        </div>
+    {.end}
+    {.equal? urlId "extras"}
+        <div class="extras js-extras">
+            <div class="extras__mast -wrap -expt -center-text">
+                <div class="h1"><em>{description}</em></div>
+            </div>
+            <div class="extras__wrap -wrap -exp">
+                {.repeated section collections}
+                    <a class="extras__page" href="{fullUrl}">
+                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                        <div class="extras__page__info">
+                            <div>
+                                <div class="h2">{title}</div>
+                                <button class="btn btn--black">
+                                    {.if description}{description|safe}{.or}Learn more{.end}
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                {.end}
+            </div>
         </div>
     {.end}
 {.end}

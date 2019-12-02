@@ -1,6 +1,7 @@
 export default ( instance ) => {
     const item = instance.data.item;
     const variant = item.structuredContent.variants[ 0 ];
+    const percent = ((variant.price - variant.salePrice) / variant.price) * 100;
     // const digital = item.digitalGoods;
     const formatTitle = ( title ) => {
         return title.replace( /\s\(/, "<br />(" );
@@ -14,7 +15,15 @@ export default ( instance ) => {
                     <div class="stack__mast -center-text">
                         <div class="stack__primo">
                             <div class="stack__title" data-content-field="title"><h1>${formatTitle( item.title )}</h1></div>
-                            <div class="stack__meta"><h1><em>$${variant.priceMoney.value}</em></h1></div>
+                            <div class="stack__meta">
+                                <h1>
+                                    <em class="${variant.onSale ? `red h3 -strike` : ``}">$${variant.priceMoney.value}</em>
+                                    ${variant.onSale ? `
+                                        <em class="green">$${variant.salePriceMoney.value} <span class="h3 grey">(You save ${percent}%)</span></em>
+
+                                    ` : ``}
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     <div class="-wrap">
@@ -45,5 +54,6 @@ export default ( instance ) => {
                 </div>
             </div>
         </div>
+        <div class="sqs-block-spacer"><div class="sqs-block-content"></div></div>
     `;
 };
