@@ -65,7 +65,7 @@
         </main>
         <footer class="footer js-footer">
             <div class="footer__patreon -wrap">
-                <a href="https://patreon.com/tabinohana" target="_blank">
+                <a href="https://patreon.com/kitajchuk" target="_blank">
                     <img class="image js-lazy-image" data-img-src="/assets/img/Tabi_Patreon_Banner.png" />
                 </a>
             </div>
