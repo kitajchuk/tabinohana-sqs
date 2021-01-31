@@ -41,7 +41,7 @@ export default ( instance ) => {
 
                 }).join( "" )}
             </div>
-            <div class="product__info cms">
+            <div class="product__info product__sticky cms">
                 <div class="product__desc">
                     ${item.excerpt}
                 </div>

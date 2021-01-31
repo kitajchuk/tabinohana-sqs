@@ -31,7 +31,7 @@ export default ( instance ) => {
                 </div>
             </a>
         ` : ``}
-        <div class="shop__grid mason ${(items.length <= 2) ? `mason--diptych` : ``} ${starred ? `-expt` : ``}">
+        <div class="shop__grid mason ${starred ? `-expt` : ``}">
             ${items.map(( item ) => {
                 const variant = item.structuredContent.variants[ 0 ];
 

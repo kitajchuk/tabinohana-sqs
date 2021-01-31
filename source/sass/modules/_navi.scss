@@ -9,14 +9,14 @@
         margin-left: 0;
     }
 
-    @include respond( $mobile-breakpoint ) {
+    @include respond( $tablet-breakpoint ) {
         display: none;
     }
 }
 .navi__li--mobile {
     display: none;
 
-    @include respond( $mobile-breakpoint ) {
+    @include respond( $tablet-breakpoint ) {
         display: block;
     }
 }

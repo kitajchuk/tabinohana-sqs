@@ -72,7 +72,7 @@
         justify-content: flex-start;
         align-items: center;
 
-        @include respond( $mobile-breakpoint ) {
+        @include respond( $tablet-breakpoint ) {
             justify-content: space-between;
         }
     }
@@ -106,7 +106,7 @@
         display: inline-block;
         width: 100%;
 
-        @include respond( $break-tablet-small ) {
+        @include respond( $tablet-breakpoint ) {
             display: none;
         }
     }

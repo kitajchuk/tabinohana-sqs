@@ -3,7 +3,7 @@
         <div class="tabi js-tabi">
             <div class="tabi__hero">
                 <a href="/store/">
-                    <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                    <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" alt="Shop Tabi No Hana Comics" />
                 </a>
             </div>
             <div class="tabi__desc -wrap -exp -center-text">
@@ -12,13 +12,21 @@
             <div class="tabi__chapters -wrap">
                 {.repeated section collections}
                     <a class="tabi__chapter" href="{items.0.fullUrl}">
-                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" alt="Tabi No Hana - {navigationTitle} - {title}" />
                         <div class="tabi__chapter__info">
                             <div>
                                 <div class="p">{navigationTitle}</div>
                                 <div class="h2">{title}</div>
                                 <button class="btn btn--black">
-                                    {.equal? @index 4}Coming in 2020{.or}Read here{.end}
+                                    {.equal? @index 1}
+                                        Read this last
+                                    {.or equal? @index 2}
+                                        Read this third
+                                    {.or equal? @index 3}
+                                        Read this second
+                                    {.or}
+                                        Read this first
+                                    {.end}
                                 </button>
                             </div>
                         </div>
@@ -42,7 +50,7 @@
                         <div class="cast__member -expb">
                             <div class="cast__wrap">
                                 <div class="cast__image">
-                                    <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+                                    <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" alt="{title}" />
                                 </div>
                                 <div class="cast__info">
                                     <div class="p"><em>{title}</em></div>
@@ -63,7 +71,7 @@
             <div class="extras__wrap -wrap -exp">
                 {.repeated section collections}
                     <a class="extras__page" href="{fullUrl}">
-                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" />
+                        <img class="image js-lazy-image" data-img-src="{mainImage.assetUrl}" data-variants="{mainImage.systemDataVariants}" data-original-size="{mainImage.originalSize}" alt="{title}" />
                         <div class="extras__page__info">
                             <div>
                                 <div class="h2">{title}</div>

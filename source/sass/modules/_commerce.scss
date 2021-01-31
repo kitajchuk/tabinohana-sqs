@@ -65,6 +65,15 @@
         margin-top: $expander-0;
     }
 }
+.product__sticky {
+    position: sticky;
+    top: $expander-0;
+
+    @include respond( $tablet-breakpoint ) {
+        position: static;
+        top: auto;
+    }
+}
 .product__info {
     @include wrapl();
     width: 50%;

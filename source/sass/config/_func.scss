@@ -221,13 +221,18 @@
         background-color: mix( black, $teal, 25% );
     }
 
+    &[disabled] {
+        cursor: default;
+        pointer-events: none;
+    }
+
     @include respond( $mobile-breakpoint ) {
         height: $input-height-m;
     }
 }
 @mixin input() {
     @include m();
-    @include placeholder( $grey-dark );
+    @include placeholder( $grey );
     line-height: 1;
     padding: 0 20px;
     -webkit-appearance: none;

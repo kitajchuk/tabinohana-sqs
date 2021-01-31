@@ -4,7 +4,7 @@
     <div class="tabi js-tabi">
         <div class="tabi__page -wrap -text--center">
             <div class="tabi__comic">
-                <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" />
+                <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" data-original-size="{originalSize}" alt="Tabi No Hana - {collection.title} - {title}" />
             </div>
         </div>
         <div class="tabi__controls -wrap -text--center">
@@ -12,7 +12,7 @@
                 <a class="btn" href="{pagination.prevItem.fullUrl}">Prev</a>
             {.or}
                 {.equal? @title "in-all-its-forms"}
-                    <a class="btn btn--grey" href="#">Prev</a>
+                    <a class="btn btn--grey" disabled href="#">Prev</a>
                 {.or equal? @title "and-then-there-were-two"}
                     <a class="btn" href="/tabi/in-all-its-forms/front-cover">Prev</a>
                 {.or equal? @title "and-so-it-will-be"}
@@ -32,9 +32,9 @@
                 {.or equal? @title "and-so-it-will-be"}
                     <a class="btn" href="/tabi/a-day-in-her-life/front-cover">Next</a>
                 {.or equal? @title "a-day-in-her-life"}
-                    <a class="btn btn--grey" href="#">Next</a>
+                    <a class="btn btn--grey" disabled href="#">Next</a>
                 {.or}
-                    <a class="btn btn--grey" href="#">Next</a>
+                    <a class="btn btn--grey disabled" href="#">Next</a>
                 {.end}
             {.end}
         </div>
